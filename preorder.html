@@ -1,42 +1,140 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pre-Order</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Order — PanenKu</title>
+  <meta name="description" content="Form pre-order produk hasil panen dari petani lokal.">
+  <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/df/47/83/df4783b2ee99733f673bd4199b846bb0.jpg">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Pre-Order Hasil Panen Petani Lokal</h2>
+  <header role="banner">
+    <div class="header-content">
+      <figure class="logo-figure">
+        <img class="logo-pulse"
+          src="https://i.pinimg.com/736x/df/47/83/df4783b2ee99733f673bd4199b846bb0.jpg"
+          style="height:90px;border-radius:16px;"
+          alt="Logo PanenKu">
+        <figcaption class="visually-hidden">Logo PanenKu</figcaption>
+      </figure>
+      <hgroup class="title-area">
+        <h1 class="brand">PanenKu</h1>
+        <p>Platform Digital Penjualan Produk Pertanian</p>
+      </hgroup>
+    </div>
+  </header>
 
-<form>
+  <nav aria-label="Navigasi utama">
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="preorder.html" class="active" aria-current="page">Pre Order</a></li>
+      <li><a href="riwayat.html">Riwayat</a></li>
+    </ul>
+  </nav>
 
-<label>Nama Pembeli</label><br>
-<input type="text" name="nama"><br><br>
+  <main id="konten-utama">
 
-<label>Produk</label><br>
-<input type="text" name="produk"><br><br>
+    <section aria-labelledby="judulPreorder" class="card animate-once" style="max-width:560px;margin:0 auto 30px;">
 
-<label>Jumlah</label><br>
-<input type="number" name="jumlah"><br><br>
+      <h2 id="judulPreorder">Form Pre-Order 🛒</h2>
 
-<button type="submit">Pesan</button>
+      <p class="info-preorder">
+        📋 Isi form di bawah untuk melakukan pre-order. Semua field wajib diisi.
+      </p>
 
-</form>
+      <form id="formPreorder" novalidate aria-label="Form pemesanan produk">
 
-<br>
+        <fieldset>
+          <legend class="visually-hidden">Data Pembeli</legend>
 
-<div class="button-center">
-    <a href="index.html" class="btn-kembali">Kembali ke Beranda</a>
-</div>
+          <div class="form-group">
+            <label for="nama">Nama Pembeli</label>
+            <input type="text" id="nama" name="nama"
+              placeholder="Masukkan nama lengkap..."
+              autocomplete="name"
+              aria-required="true"
+              aria-describedby="errNama">
+            <span class="err-msg" id="errNama" role="alert">⚠ Nama pembeli wajib diisi</span>
+          </div>
 
-<footer>
-<p>Kontak Penjual</p>
-<p>Whatsapp : 08999999999</p>
-<p>Email : petani@mail.com</p>
-<p>© 2026 Jual Beli Hasil Panen</p>
-</footer>
+          <div class="form-group">
+            <label for="telepon">Nomor Telepon</label>
+            <input type="tel" id="telepon" name="telepon"
+              placeholder="Contoh: 08123456789"
+              autocomplete="tel"
+              aria-required="true"
+              aria-describedby="errTelepon">
+            <span class="err-msg" id="errTelepon" role="alert">⚠ Nomor telepon wajib diisi (minimal 10 digit)</span>
+          </div>
 
+          <div class="form-group">
+            <label for="alamat">Alamat Pengiriman</label>
+            <textarea id="alamat" name="alamat" rows="3"
+              placeholder="Masukkan alamat lengkap..."
+              autocomplete="street-address"
+              aria-required="true"
+              aria-describedby="errAlamat"></textarea>
+            <span class="err-msg" id="errAlamat" role="alert">⚠ Alamat pengiriman wajib diisi</span>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend class="visually-hidden">Detail Pesanan</legend>
+
+          <div class="form-group">
+            <label for="produk">Produk</label>
+            <select id="produk" name="produk"
+              aria-required="true"
+              aria-describedby="errProduk infoStok">
+              <option value="">-- Pilih produk --</option>
+            </select>
+            <span class="err-msg" id="errProduk" role="alert">⚠ Produk wajib dipilih</span>
+            <span class="info-stok" id="infoStok" style="display:none" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="jumlah">Jumlah (kg)</label>
+            <input type="number" id="jumlah" name="jumlah"
+              placeholder="Contoh: 5" min="1"
+              aria-required="true"
+              aria-describedby="errJumlah">
+            <span class="err-msg" id="errJumlah" role="alert">⚠ Jumlah wajib diisi dan minimal 1 kg</span>
+          </div>
+
+        </fieldset>
+
+        <aside class="harga-summary" id="hargaSummary" style="display:none" aria-live="polite">
+          <span>Estimasi Total:</span>
+          <strong id="totalHarga">Rp 0</strong>
+        </aside>
+
+        <button type="submit">✅ Kirim Pesanan</button>
+
+      </form>
+
+    </section>
+
+    <div class="button-center">
+      <a href="index.html" class="btn-kembali">← Kembali ke Beranda</a>
+    </div>
+
+  </main>
+
+  <footer role="contentinfo">
+    <address>
+      <p><strong>Kontak Penjual</strong></p>
+      <p>WhatsApp: <a href="https://wa.me/6208999999999">08999999999</a>
+         &nbsp;|&nbsp; Email: <a href="mailto:petani@mail.com">petani@mail.com</a></p>
+    </address>
+    <small style="display:block;margin-top:8px;opacity:.7">© 2026 PanenKu — Jual Beli Hasil Panen</small>
+  </footer>
+
+  <output id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></o>
+
+  <script src="script.js"></script>
 </body>
 </html>

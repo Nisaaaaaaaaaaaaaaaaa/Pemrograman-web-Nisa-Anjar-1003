@@ -1,58 +1,98 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Riwayat Pemesanan</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat — PanenKu</title>
+  <meta name="description" content="Riwayat pesanan pre-order produk hasil panen.">
+  <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/df/47/83/df4783b2ee99733f673bd4199b846bb0.jpg">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2 class="judul-riwayat">Riwayat Pre-Order</h2>
+  <header role="banner">
+    <div class="header-content">
+      <figure class="logo-figure">
+        <img class="logo-pulse"
+          src="https://i.pinimg.com/736x/df/47/83/df4783b2ee99733f673bd4199b846bb0.jpg"
+          style="height:90px;border-radius:16px;"
+          alt="Logo PanenKu">
+        <figcaption class="visually-hidden">Logo PanenKu</figcaption>
+      </figure>
+      <hgroup class="title-area">
+        <h1 class="brand">PanenKu</h1>
+        <p>Platform Digital Penjualan Produk Pertanian</p>
+      </hgroup>
+    </div>
+  </header>
 
-<table border="1">
-<tr>
-<th>Nama Pembeli</th>
-<th>Produk</th>
-<th>Jumlah</th>
-<th>Status</th>
-</tr>
+  <nav aria-label="Navigasi utama">
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="preorder.html">Pre Order</a></li>
+      <li><a href="riwayat.html" class="active" aria-current="page">Riwayat</a></li>
+    </ul>
+  </nav>
 
-<tr>
-<td>Nisa</td>
-<td>Padi</td>
-<td>10 kg</td>
-<td>Diproses</td>
-</tr>
+  <main id="konten-utama">
+    <section aria-labelledby="judulRiwayat" class="card animate-once">
+      <h2 id="judulRiwayat" class="judul-riwayat">Riwayat Pre-Order 📋</h2>
 
-<tr>
-<td>Andi</td>
-<td>Jagung</td>
-<td>5 kg</td>
-<td>Selesai</td>
-</tr>
+      <nav class="filter-bar" id="filterBar" style="display:none" aria-label="Filter status pesanan">
+        <button class="filter-btn active" data-filter="semua">Semua</button>
+        <button class="filter-btn" data-filter="Menunggu">⏳ Menunggu</button>
+        <button class="filter-btn" data-filter="Diproses">🔄 Diproses</button>
+        <button class="filter-btn" data-filter="Selesai">✅ Selesai</button>
+      </nav>
 
-<tr>
-<td>Siti</td>
-<td>Tomat</td>
-<td>3 kg</td>
-<td>Menunggu</td>
-</tr>
+      <div class="table-wrapper">
+        <table id="tabelRiwayat" aria-label="Tabel riwayat pesanan">
+          <thead>
+            <tr>
+              <th scope="col">Tanggal</th>
+              <th scope="col">Nama Pembeli</th>
+              <th scope="col">Produk</th>
+              <th scope="col">Jumlah</th>
+              <th scope="col">Total</th>
+              <th scope="col">Status</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="bodyRiwayat" aria-live="polite"></tbody>
+        </table>
+      </div>
 
-</table>
+      <section id="emptyState" style="display:none;text-align:center;padding:40px 20px" aria-label="Tidak ada riwayat pesanan">
+        <p style="font-size:3rem;margin-bottom:12px" aria-hidden="true">📭</p>
+        <p style="color:#888;font-size:1rem">Belum ada riwayat pesanan.</p>
+        <a href="preorder.html" class="btn-kembali" style="display:inline-block;margin-top:16px">
+          + Buat Pesanan
+        </a>
+      </section>
+    </section>
 
-<br>
+    <div class="button-center" id="btnHapusWrap" style="display:none">
+      <button class="btn-hapus-semua" id="btnHapusSemua">🗑 Hapus Semua Riwayat</button>
+    </div>
 
-<div class="button-center">
-    <a href="index.html" class="btn-kembali">Kembali ke Beranda</a>
-</div>
+    <div class="button-center">
+      <a href="index.html" class="btn-kembali">← Kembali ke Beranda</a>
+    </div>
 
-<footer>
-<p>Kontak Penjual</p>
-<p>Whatsapp : 08999999999</p>
-<p>Email : petani@mail.com</p>
-<p>© 2026 Jual Beli Hasil Panen</p>
-</footer>
+  </main>
+  
+  <footer role="contentinfo">
+    <address>
+      <p><strong>Kontak Penjual</strong></p>
+      <p>WhatsApp: <a href="https://wa.me/6208999999999">08999999999</a>
+         &nbsp;|&nbsp; Email: <a href="mailto:petani@mail.com">petani@mail.com</a></p>
+    </address>
+    <small style="display:block;margin-top:8px;opacity:.7">© 2026 PanenKu — Jual Beli Hasil Panen</small>
+  </footer>
 
+  <output id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></o>
+
+  <script src="script.js"></script>
 </body>
 </html>

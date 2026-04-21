@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Sistem Pre Order Hasil Panen</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PanenKu — Sistem Pre-Order Hasil Panen</title>
+  <meta name="description" content="Platform digital pre-order hasil panen langsung dari petani lokal.">
+  <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/df/47/83/df4783b2ee99733f673bd4199b846bb0.jpg">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-<header class="header">
+  <header role="banner">
     <div class="header-content">
-
-        <img src="https://i.pinimg.com/736x/df/47/83/df4783b2ee99733f673bd4199b846bb0.jpg" 
-        style="height:100px" alt="logo sistem">
-        <div class="title-area">
-            <h1 class="brand">PanenKu</h1>
+      <figure class="logo-figure">
+        <img class="logo-pulse"
+          src="https://i.pinimg.com/736x/df/47/83/df4783b2ee99733f673bd4199b846bb0.jpg"
+          style="height:90px;border-radius:16px;"
+          alt="Logo PanenKu">
+        <figcaption class="visually-hidden">Logo PanenKu</figcaption>
+      </figure>
+      <hgroup class="title-area">
+        <h1 class="brand">PanenKu</h1>
+        <p>Platform Digital Penjualan Produk Pertanian</p>
+      </hgroup>
     </div>
-</header>
-<h1>Sistem Manajemen Pre-Order Hasil Panen</h1>
-<p>Platform Digital Penjualan Produk Pertanian</p>
-</header>
+  </header>
 
-<nav>
-<ul>
-<li><a href="index.html">Beranda</a></li>
-<li><a href="produk.html">Produk</a></li>
-<li><a href="preorder.html">Pre Order</a></li>
-<li><a href="riwayat.html">Riwayat</a></li>
-</ul>
-</nav>
+  <nav aria-label="Navigasi utama">
+    <ul>
+      <li><a href="index.html" class="active" aria-current="page">Beranda</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="preorder.html">Pre Order</a></li>
+      <li><a href="riwayat.html">Riwayat</a></li>
+    </ul>
+  </nav>
 
-<main>
+  <main id="konten-utama">
+    <article aria-labelledby="judulSambutan" class="card animate-once">
+      <h2 id="judulSambutan">Selamat Datang di PanenKu 🌾</h2>
+      <p>
+        Website ini membantu pembeli melakukan pemesanan hasil panen secara
+        pre-order langsung dari petani. Sistem ini memudahkan pengguna untuk
+        melihat produk yang tersedia, melakukan pemesanan, serta memantau
+        riwayat transaksi dengan lebih praktis.
+      </p>
+    </article>
 
-<div class="card">
-<h2>Selamat Datang</h2>
-<p>
-Website ini membantu pembeli melakukan pemesanan hasil panen secara 
-pre-order langsung dari petani. Sistem ini memudahkan pengguna untuk 
-melihat produk yang tersedia, melakukan pemesanan, serta memantau 
-riwayat transaksi dengan lebih praktis.
-</p>
-</div>
+    <section aria-labelledby="judulUnggulan" class="card animate-once" style="animation-delay:.1s">
+      <h2 id="judulUnggulan">Keunggulan Platform</h2>
+      <ul class="features">
+        <li>🌾 Produk langsung dari petani lokal</li>
+        <li>💰 Harga lebih transparan &amp; terjangkau</li>
+        <li>📦 Sistem pre-order yang mudah &amp; cepat</li>
+        <li>📊 Riwayat pesanan tersimpan otomatis</li>
+      </ul>
+    </section>
 
-<div class="card">
-<h2>Keunggulan Platform</h2>
+    <section aria-label="Statistik pesanan" class="animate-once" style="animation-delay:.2s">
+      <div class="stats-row" id="statsRow" role="list" aria-label="Ringkasan jumlah pesanan"></div>
+    </section>
 
-<ul class="features">
-<li>🌾 Produk langsung dari petani</li>
-<li>💰 Harga lebih transparan</li>
-<li>📦 Sistem pre-order yang mudah</li>
-<li>📊 Riwayat pesanan tersimpan</li>
-</ul>
+  </main>
 
-</div>
+  <footer role="contentinfo">
+    <address>
+      <p><strong>Kontak Penjual</strong></p>
+      <p>WhatsApp: <a href="https://wa.me/6208999999999">08999999999</a>
+         &nbsp;|&nbsp; Email: <a href="mailto:petani@mail.com">petani@mail.com</a></p>
+    </address>
+    <small style="display:block;margin-top:8px;opacity:.7">© 2026 PanenKu — Jual Beli Hasil Panen</small>
+  </footer>
 
-</main>
+  <output id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></output>
 
-<footer>
-<p>Kontak Penjual</p>
-<p>Whatsapp : 08999999999</p>
-<p>Email : petani@mail.com</p>
-<p>© 2026 Jual Beli Hasil Panen</p>
-</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
